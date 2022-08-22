@@ -4,17 +4,41 @@
  * command node map.js in the terminal
  */
 
-// Using a for loop
+//_______________________________________Using a for loop
+let nums = [1,2,3,4,5];
+let resultof = [];
+let resultin = [];
+for (let num in nums) { // when _in_ is used it uses index number
+  resultin.push(num * 2)
+}
+for (let num of nums) { // when _of_ is used it uses the acctual numbers in array <<<< correct way
+  resultof.push(num * 2)
+}
+
+console.log(resultof) //<<<< correct answer
+console.log(resultin)
 
 
-// Using map()
+// ___________________________________Using map()
+const multipByTwo = function(num) {
+  return num * 2
+}
+
+const mapResults = nums.map(multipByTwo)
+console.log(mapResults)
 
 
-// Simplified w/ map()
+
+// ___________________________________________________________Simplified w/ map()
+const simplified = nums.map(function(num) { return num * 2});
+console.log(simplified)
 
 
-// Simplfied w/ map() + arrow function
+// ___________________________________Simplfied w/ map() + arrow function
+const arrow = nums.map(num => num * 2)
 
+
+console.log(arrow)
 
 // With objects:
 const students = [
@@ -37,3 +61,7 @@ const students = [
     skill: 'CSS'
   },
 ];
+
+// const studentsWithIds = students.map(students => [students.id,students.name]); // important to array[] the result or else no id, just list of names
+// console.log(studentsWithIds)
+
